@@ -124,6 +124,47 @@
       href="https://wildpanda.com.au/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3"
       media="all"
     />
+    <!-- Popup styles -->
+    <style>
+      .popup {
+        background-color: #ffffff;
+        width: 450px;
+        padding: 20px 30px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        border-radius: 8px;
+        display: none;
+        text-align: center;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.213);
+      }
+      @media (max-width: 640px) {
+        .popup {
+          width: 90%;
+        }
+      }
+      .popup button {
+        display: block;
+        margin: 0 0 auto auto;
+        padding: 0 10px;
+        background-color: transparent;
+        font-size: 25px;
+        color: #c5c5c5;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .popup a {
+        color: red;
+        font-size: 14px;
+        text-align: justify;
+        margin: 20px 0;
+        line-height: 25px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
     <style id="wp-block-library-theme-inline-css">
       .wp-block-audio figcaption {
         color: #555;
@@ -1430,6 +1471,23 @@
           },
           !1
         );
+    </script>
+    <div class="popup">
+      <button id="close">&times;</button>
+      <img src="./wp-content/uploads/2022/04/WX20220718-212509.png" alt="" />
+      <a href="https://bashan.com.au/">Order in Bashan</a>
+    </div>
+    <!-- Popup JS -->
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function open(event) {
+          document.querySelector(".popup").style.display = "block";
+        }, 1000);
+      });
+
+      document.querySelector("#close").addEventListener("click", function () {
+        document.querySelector(".popup").style.display = "none";
+      });
     </script>
   </body>
 </html>
